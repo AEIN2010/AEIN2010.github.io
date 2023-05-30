@@ -37,3 +37,7 @@ p::first-letter{
   line-height: 0.65;
   margin: 0.1em 0.1em 0.2em 0;
 }
+
+#noPadding{
+    padding: 0;
+}

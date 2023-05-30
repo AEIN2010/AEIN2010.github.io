@@ -22,3 +22,18 @@ li{
 .oList{
     color: coral;
 }
+
+
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:active { color: darkgreen; }
+
+
+p::first-letter{
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+  float: left;
+  font-size: 6rem;
+  line-height: 0.65;
+  margin: 0.1em 0.1em 0.2em 0;
+}

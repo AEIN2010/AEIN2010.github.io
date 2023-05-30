@@ -21,6 +21,8 @@ li{
 
 .oList{
     color: coral;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 

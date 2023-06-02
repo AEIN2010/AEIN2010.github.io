@@ -50,7 +50,7 @@
         </select>
     </nav>
 
-    <form style="min-width: 853px; margin-bottom: 0px; display: flex; flex-direction: row; border: 2px solid lightblue; border-bottom: none; justify-content: center; padding-bottom: 10px;" action="" method="get">
+    <form id="theForm" style="min-width: 853px; margin-bottom: 0px; display: flex; flex-direction: row; border: 2px solid lightblue; border-bottom: none; justify-content: center; padding-bottom: 10px;" action="" method="get">
         
         <span id="leftspan" style="margin-right: 10px; margin-left: 1%; display: inline-flex; flex-direction: column;">
             
@@ -141,8 +141,7 @@
     </form>
     
     <div style="background-color: gray; border: 2px solid lightblue; border-top: none; margin-top: 0px; background-size: 50%;">
-        <button type="submit">submit</button>
-        <button type="reset">reset</button>
+        <button form="theForm" type="submit">submit</button>
+        <button form="theForm" type="reset">reset</button>
     </div>
-
 </body></html>

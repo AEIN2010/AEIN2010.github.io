@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+
+
+
+        const student = {
+            firstName: 'me',
+            lastName: 'me',
+            grades: [],
+            inputNewGrade: function (newGrade) {
+                this.grades.push(newGrade);
+            },
+            computeAverage: function () {
+                let avg = 0;
+                let i = 0;
+                this.grades.forEach(element => {
+                    avg = avg + element;
+                    i++;
+                });
+                return avg / i;
+            }
+        };
+
+
+
+        stu1 = Object.create(student);
+        stu1.inputNewGrade(5);
+        stu1.inputNewGrade(5);
+        stu1.inputNewGrade(5);
+        stu1.inputNewGrade(5);
+        stu1.inputNewGrade(5);
+        ///////////////////////////////////////////////////////////////////////////////////////
+
+        ////Q2
+        function student2() {
+            this.firstName = '';
+            this.lastName = '';
+            this.grades = [];
+            this.inputNewGrade = function (newGrade) {
+                this.grades.push(newGrade);
+            },
+                this.computeAverage = function () {
+                    let avg = 0;
+                    let i = 0;
+                    this.grades.forEach(element => {
+                        avg = avg + element;
+                        i++;
+                    });
+                    return avg / i;
+                }
+
+
+        }
+
+        stu2 = new student2();
+        stu2.inputNewGrade(6);
+        stu2.inputNewGrade(6);
+        stu2.inputNewGrade(6);
+
+        ////////////////////////////////////////////////////////////////////
+        ///Q3
+        function student3() {
+            this.firstName = '';
+            this.lastName = '';
+            this.grades = [];
+            this.inputNewGrade = function (newGrade) {
+                this.grades.push(newGrade);
+            },
+                this.computeAverage = function () {
+                    let avg = 0;
+                    let i = 0;
+                    this.grades.forEach(element => {
+                        avg = avg + element;
+                        i++;
+                    });
+                    return avg / i;
+                }
+            this.sort = function () {
+                return this.grades.sort(function (a, b) {
+                    return a - b;
+                });
+            }
+
+        }
+
+        stu3 = new student3();
+        stu3.inputNewGrade(67);
+        stu3.inputNewGrade(7);
+        stu3.inputNewGrade(50);
+
+        ////////////////////////////////////////////////////////////////////////////
+        ////Q4
+        const Node = {
+            init(value) {
+                this.value = value;
+                this.next = null;
+            },
+        };
+
+        const LinkedList = {
+            init: function () {
+                this.head = null;
+
+            },
+
+            add: function (value) {
+                const newNode = Object.create(Node);
+                newNode.init(value);
+
+                if (this.head === null) {
+                    this.head = newNode;
+                    this.tail = newNode;
+                } else {
+                    this.tail.next = newNode;
+                    this.tail = newNode;
+                }
+            },
+
+            remove: function (value) {
+                let currentNode = this.head;
+                let previousNode = null;
+
+                while (currentNode !== null) {
+                    if (currentNode.value === value) {
+                        if (previousNode === null) {
+                            this.head = currentNode.next;
+                            if (this.tail === currentNode) {
+                                this.tail = null;
+                            }
+                        } else {
+                            previousNode.next = currentNode.next;
+                            if (this.tail === currentNode) {
+                                this.tail = previousNode;
+                            }
+                        }
+                        break;
+                    }
+
+                    previousNode = currentNode;
+                    currentNode = currentNode.next;
+                }
+            },
+
+            print: function () {
+                let currentNode = this.head;
+                const values = [];
+
+                while (currentNode !== null) {
+                    values.push(currentNode.value);
+                    currentNode = currentNode.next;
+                }
+
+                console.log(`LinkedList{${values.join(',')}}`);
+            },
+        };
+
+
+        const linkedList = Object.create(LinkedList);
+        linkedList.init();
+
+
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(3);
+        //linkedList.print();
+        linkedList.remove(2);
+        //linkedList.print();
+
+        ////////////////////////////////////////////
+        ////Q42
+        function Node2(value) {
+            this.value = value;
+            this.next = null;
+        }
+
+        function LinkedList2() {
+            this.head = null;
+            this.tail = null;
+        }
+
+        LinkedList2.prototype.add = function (value) {
+            const newNode = new Node2(value);
+
+            if (this.head === null) {
+                this.head = newNode;
+                this.tail = newNode;
+            } else {
+                this.tail.next = newNode;
+                this.tail = newNode;
+            }
+        };
+
+        LinkedList2.prototype.remove = function (value) {
+            let currentNode = this.head;
+            let previousNode = null;
+
+            while (currentNode !== null) {
+                if (currentNode.value === value) {
+                    if (previousNode === null) {
+                        this.head = currentNode.next;
+                        if (this.tail === currentNode) {
+                            this.tail = null;
+                        }
+                    } else {
+                        previousNode.next = currentNode.next;
+                        if (this.tail === currentNode) {
+                            this.tail = previousNode;
+                        }
+                    }
+                    break;
+                }
+
+                previousNode = currentNode;
+                currentNode = currentNode.next;
+            }
+        };
+
+        LinkedList2.prototype.print = function () {
+            let currentNode = this.head;
+            const values = [];
+
+            while (currentNode !== null) {
+                values.push(currentNode.value);
+                currentNode = currentNode.next;
+            }
+
+            console.log(`LinkedList{${values.join(",")}}`);
+        };
+
+        
+        const linkedList2 = new LinkedList2();
+
+        // Usage example
+        linkedList2.add(1);
+        linkedList2.add(2);
+        linkedList2.add(3);
+        //linkedList2.print();
+        linkedList2.remove(2);
+        //linkedList2.print();
+
+
+    </script>
+
+
+
+    <div>
+        <p>Q1</p>
+        <br>
+        <button onclick="console.log(stu1.computeAverage())"> Solutin of Q1 result in console (please see code in html
+            doc)</button>
+
+        <p>Q2</p>
+        <br>
+        <button onclick="console.log(stu2.computeAverage())"> Solutin of Q2 result in console (please see code in html
+            doc)</button>
+
+        <p>Q3</p>
+        <br>
+        <button onclick="console.log(stu3.sort())"> Q3 sort part</button>
+        <button onclick="console.log(stu3.computeAverage())"> Solutin of Q3 result in console (please see code in html
+            doc)</button>
+
+        <p>Q41</p>
+        <br>
+        <button onclick="console.log(linkedList.print())"> Solutin of Q41 result in console (please see code in html
+            doc)</button>
+
+        <p>Q42</p>
+        <br>
+        <button onclick="console.log(linkedList.print())"> Solutin of Q42 result in console (please see code in html
+            doc)</button>
+
+    </div>
+
+</body>
+
+</html>

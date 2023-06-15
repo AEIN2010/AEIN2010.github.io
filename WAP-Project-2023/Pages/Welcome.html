@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+    <link href="WelcomeStyle.css"  type="text/css" rel="stylesheet"/>
+</head>
+<body style="min-width: 301px; min-height: 108px;">
+
+    
+
+    <nav >
+        <img src="logo.jpg" alt="MyLogo" style="align-self: flex-start; margin-left: 5px; align-self: center;" width="150" height="48">
+        <p style="margin: 0;">Welcome, User</p>
+        <input type="button" value="Logout">
+    </nav>
+<hr>
+<form>
+    <p>List Of  Products:</p>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Stock</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>Coffee</td>
+            <td>20</td>
+            <td> <img src="coffee.jpg" alt=""class="product"></td>
+            <td>15</td>
+            <td><button><img src="https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/16x16/shopping_cart.png" alt=""></button></td>
+        </tr>
+        <tr>
+            <td>Pepsi</td>
+            <td>10</td>
+            <td> <img src="pepsi.webp" alt="" class="product"></td>
+            <td>50</td>
+            <td><button><img src="https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/16x16/shopping_cart.png" alt=""></button></td>
+        </tr>
+        <tr>
+            <td>Oreo</td>
+            <td>15</td>
+            <td> <img  src="oreo.jpg" class="product"></td>
+            <td>100</td>
+            <td><button><img src="https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/16x16/shopping_cart.png" alt=""></button></td>
+        </tr>
+    </table>
+
+    <p style="margin-top: 100px;">Your Shopping Cart:</p>
+    <table >
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th>Quantity</th>
+        </tr>
+        <tr>
+            <td>Coffee</td>
+            <td>20</td>
+            <td>40</td>
+            <td>
+                <button class="minus">-</button>
+                <input type="text" disabled value="2" style="width: 20px; text-align: center;">
+                <button class="add">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Oreo</td>
+            <td>15</td>
+            <td>45</td>
+            <td>
+                <button class="minus">-</button>
+                <input type="text" disabled value="3" style="width: 20px; text-align: center;">
+                <button class="add">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="4" style="padding-right: 5%; text-align: end;">Total: 85</td>
+        </tr>
+    </table>
+    <div hidden>There is no item in youre shopping cart !</div>
+   
+   <button id="btn" >
+        Place Order
+    </button>
+</form>
+</body>
+</html>

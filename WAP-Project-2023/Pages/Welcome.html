@@ -6,6 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping</title>
     <link href="./WelcomeStyle.css"  type="text/css" rel="stylesheet"/>
+    <script>
+        function myfunction(operation,id){
+            var v= parseInt(document.getElementById(id).value);
+            console.log(v);
+            if (operation=='+'){
+
+               document.getElementById(id).value = v+1;
+             
+            }
+            if(operation=='-'){
+                if (v==0)return;
+                else{
+                    document.getElementById(id).value = v-1;
+                }
+            }
+        }
+    </script>
 </head>
 <body style="min-width: 301px; min-height: 108px;">
 
@@ -63,9 +80,9 @@
             <td>20</td>
             <td>40</td>
             <td>
-                <button type="button" class="minus">-</button>
-                <input type="text" disabled value="2" style="width: 20px; text-align: center;">
-                <button type="button" class="add">+</button>
+                <button type="button" class="minus" onclick="myfunction('-','qty1')">-</button>
+                <input type="text" id="qty1" disabled value="2" style="width: 20px; text-align: center;">
+                <button type="button" class="add" onclick="myfunction('+','qty1')">+</button>
             </td>
         </tr>
         <tr>
@@ -73,9 +90,9 @@
             <td>15</td>
             <td>45</td>
             <td>
-                <button type="button" class="minus">-</button>
-                <input type="text" disabled value="3" style="width: 20px; text-align: center;">
-                <button type="button" class="add">+</button>
+                <button type="button" class="minus" onclick="myfunction('-','qty2')">-</button>
+                <input type="text" id="qty2" disabled value="3" style="width: 20px; text-align: center;">
+                <button type="button" class="add" onclick="myfunction('+','qty2')">+</button>
             </td>
         </tr>
         <tr>
